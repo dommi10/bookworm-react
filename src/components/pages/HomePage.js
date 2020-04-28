@@ -12,7 +12,17 @@ const HomePage = ({ isAuthenticated, logout }) => (
         Logout
       </Button>
     ) : (
-      <Link to="/login">Login</Link>
+      <div className="ui segment">
+        <div className="ui very relaxed two column grid">
+          <div className="column">
+            <Link to="/login">Login</Link>
+          </div>
+          <div className="column">
+            <Link to="/signup">Sign Up</Link>
+          </div>
+        </div>
+        <div className="ui vertical divider">OR</div>
+      </div>
     )}
   </div>
 )
