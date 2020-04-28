@@ -8,7 +8,7 @@ class LoginPage extends React.Component {
   state = {}
 
   submit = (data) =>
-    this.props.login(data).then(() => this.props.history.push("/"))
+    this.props.login(data).then(() => this.props.history.push("/dashboard"))
 
   render() {
     return (
