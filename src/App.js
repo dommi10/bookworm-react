@@ -8,13 +8,14 @@ import LoginPage from "./components/pages/LoginPage"
 import ForgotPasswordPage from "./components/pages/ForgotPasswordPage"
 import ResetPasswordPage from "./components/pages/ResetPasswordPage"
 import SignUpPage from "./components/pages/SignUpPage"
+import NewBookPage from "./components/pages/NewBookPage"
 import TopNavigation from "./components/navigation/TopNavigation"
 import DashboardPage from "./components/pages/DashboardPage"
 import UserRoute from "./components/routes/UserRoute"
 import GuestRoute from "./components/routes/GuestRoute"
 
 const App = ({ isAuthenticated }) => (
-  <div >
+  <div>
     {isAuthenticated && <TopNavigation />}
     <Route path="/" exact component={HomePage} />
     <Route path="/confirmation/:token" exact component={ConfirmationPage} />
@@ -23,6 +24,7 @@ const App = ({ isAuthenticated }) => (
     <GuestRoute path="/forgot_password" exact component={ForgotPasswordPage} />
     <GuestRoute path="/signup" exact component={SignUpPage} />
     <UserRoute path="/dashboard" exact component={DashboardPage} />
+    <UserRoute path="/books/new" exact component={NewBookPage} />
   </div>
 )
 

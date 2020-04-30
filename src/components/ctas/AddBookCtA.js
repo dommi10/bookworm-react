@@ -1,5 +1,5 @@
 import React from "react"
-// import PropTypes from "prop-types"
+import { Link } from "react-router-dom"
 import { Card, Icon } from "semantic-ui-react"
 
 const AddBookCtA = () => {
@@ -7,12 +7,12 @@ const AddBookCtA = () => {
     <Card centered>
       <Card.Content textAlign="center">
         <Card.Header>Add new book</Card.Header>
-        <Icon name="add circle" size="big" />
+        <Link to="/books/new">
+          <Icon name="add circle" size="big" />
+        </Link>
       </Card.Content>
     </Card>
   )
 }
-
-AddBookCtA.propTypes = {}
 
 export default AddBookCtA
