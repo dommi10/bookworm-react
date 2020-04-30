@@ -14,7 +14,7 @@ import UserRoute from "./components/routes/UserRoute"
 import GuestRoute from "./components/routes/GuestRoute"
 
 const App = ({ isAuthenticated }) => (
-  <div className="ui container">
+  <div >
     {isAuthenticated && <TopNavigation />}
     <Route path="/" exact component={HomePage} />
     <Route path="/confirmation/:token" exact component={ConfirmationPage} />
