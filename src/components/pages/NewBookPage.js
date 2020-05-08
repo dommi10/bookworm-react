@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Segment } from "semantic-ui-react"
 import SearchBookForm from "../forms/SearchBookForm"
 import BookForm from "../forms/BookForm"
+import axios from "axios"
 
 export class NewBookPage extends Component {
   state = {
