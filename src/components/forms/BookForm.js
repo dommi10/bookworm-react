@@ -10,7 +10,7 @@ export class BookForm extends Component {
       title: this.props.book.title,
       authors: this.props.book.authors,
       cover: this.props.book.covers[0],
-      pages: this.props.book.pages,
+      pages: this.props.book.pages ?? 0,
     },
     covers: this.props.book.covers,
     index: 0,
@@ -159,7 +159,7 @@ BookForm.propTypes = {
     title: PropTypes.string.isRequired,
     authors: PropTypes.string.isRequired,
     covers: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-    pages: PropTypes.number.isRequired,
+    pages: PropTypes.number,
   }).isRequired,
   index: PropTypes.number,
 }

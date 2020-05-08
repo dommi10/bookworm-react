@@ -23,7 +23,7 @@ export class SearchBookForm extends Component {
 
   onResultSelect = (e, { result }) => {
     this.setState({ query: result.title })
-    this.props.onBookSelect(this.state.books[result.key])
+    this.props.onBookSelect(this.state.books[result.value])
   }
 
   fetchOptions = () => {
@@ -35,10 +35,10 @@ export class SearchBookForm extends Component {
       .then((books) => {
         const options = []
         const bookHash = {}
-        books.forEach((book) => {
+        books.forEach((book, i) => {
           bookHash[book.goodreadsId] = book
           options.push({
-            key: book.goodreadsId,
+            key: i,
             value: book.goodreadsId,
             title: book.title,
           })
