@@ -9,9 +9,15 @@ export class NewBookPage extends Component {
     book: null,
   }
 
-  onBookSelect = (book) => this.setState({ book })
+  onBookSelect = (book) => {
+    this.setState({ book })
+    axios
+      .get(`/api/books/fetchPages?goodreadsId=${book.goodreadsId}`)
+      .then((res) => res.data.pages)
+      .then((pages) => this.setState({ book: { ...book, pages } }))
+  }
 
-  addBook = (book) => console.log("hi")
+  addBook = () => console.log("hi")
 
   render() {
     return (

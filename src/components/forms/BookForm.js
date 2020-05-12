@@ -10,7 +10,7 @@ export class BookForm extends Component {
       title: this.props.book.title,
       authors: this.props.book.authors,
       cover: this.props.book.covers[0],
-      pages: this.props.book.pages ?? 0,
+      pages: this.props.book.pages,
     },
     covers: this.props.book.covers,
     index: 0,
@@ -19,7 +19,8 @@ export class BookForm extends Component {
   }
 
   static getDerivedStateFromProps({ book }, state) {
-    return book.goodreadsId !== state.data.goodreadsId
+    return book.goodreadsId !== state.data.goodreadsId ||
+      book.pages !== state.data.pages
       ? {
           data: {
             goodreadsId: book.goodreadsId,
@@ -118,7 +119,7 @@ export class BookForm extends Component {
                     type="text"
                     id="pages"
                     name="pages"
-                    value={data.pages}
+                    value={data.pages ? data.pages : 0}
                     onChange={this.onChangeNumber}
                     placeholder="book pages"
                   />
