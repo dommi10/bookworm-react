@@ -160,7 +160,7 @@ BookForm.propTypes = {
     title: PropTypes.string.isRequired,
     authors: PropTypes.string.isRequired,
     covers: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-    pages: PropTypes.number.isRequired,
+    pages: PropTypes.number,
   }).isRequired,
   index: PropTypes.number,
 }
