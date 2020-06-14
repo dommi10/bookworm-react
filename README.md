@@ -1,4 +1,7 @@
-# Book-worm
+# Bookworm
+
+service to subscribe to a book<br/>
+please if you have any idea, contribute
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
